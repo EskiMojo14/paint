@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paint</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Condensed" rel="stylesheet">
+</head>
+
+<body class="mdc-typography">
+    <div id="image-display" class="image-display">
+        <div class="image-display__top-bar">
+            <div class="image-display__top-bar__left">
+                Image Viewer
+            </div>
+            <div class="image-display__top-bar__right">
+                <svg class="image-display__expand-icon" id="expand" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24">
+                    <path opacity=".87" fill="none" d="M24 24H0V0h24v24z" />
+                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
+                </svg>
+            </div>
+        </div>
+        <div id="container" class="image-display__container">
+            <div class="image-display__navigation">
+                <div class="image-display__navigation__back" id="back">
+                    <i class="material-icons">arrow_back</i>
+                </div>
+                <div class="image-display__navigation__spacer"></div>
+                <div class="image-display__navigation__forward" id="forward">
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+        <div class="image-display__labels">
+            <div class="image-display__labels__overline">
+                <div class="image-display__labels__author">
+                    <span id="poster">Annie Spratt</span> &ndash; <span id="discrim" class="image-display__labels__author__discrim">@anniespratt</span>
+                </div>
+                <div class="image-display__labels__numbers">
+                    <span id="position">1</span>/<span id="total">3</span>
+                </div>
+            </div>
+            <div class="image-display__labels__name">
+                <span id="name">Abstract Pattern</span>
+            </div>
+        </div>
+    </div>
+    <div class="mid">
+        <div class="mid__clock">
+            <div class="mid__clock__time" id="time">16<span class="blink">:</span>13</div>
+            <div class="mid__clock__date" id="date">
+                <span class="accent">Sunday</span>, 24 June 2018
+            </div>
+        </div>
+    </div>
+    <div id="music-display" class="music-display">
+        <div id="fab" class="music-display__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <circle opacity=".3" cx="10.01" cy="17" r="2" />
+                <path d="M12 3l.01 10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4.01 4S14 19.21 14 17V7h4V3h-6zm-1.99 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+            </svg>
+        </div>
+        <div class="music-display__ui">
+            <div class="music-display__ui__top-bar">
+                <div class="music-display__ui__top-bar__left">
+                    Music Player
+                </div>
+                <div class="music-display__ui__top-bar__right">
+                    <span id="close"><i class="material-icons">close</i></span>
+                </div>
+            </div>
+            <div class="music-display__ui__cover">
+
+            </div>
+            <div class="music-display__ui__progress">
+
+            </div>
+            <div class="music-display__ui__controls">
+
+            </div>
+            <div class="music-display__ui__info">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('fab').addEventListener("click", function (e) {
+        document.getElementById('music-display').classList.add('music-display--open');
+    });
+    document.getElementById('close').addEventListener("click", function (e) {
+        document.getElementById('music-display').classList.remove('music-display--open');
+    });
+    document.getElementById('expand').addEventListener("click", function (e) {
+        document.getElementById('image-display').classList.toggle('image-display--expanded');
+    });
+</script>
+
+<script src="js/clock.js"></script>
+<script src="js/pictures.js"></script>
+
+</html>
